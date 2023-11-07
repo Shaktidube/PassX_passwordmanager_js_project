@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff5733;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: transform 0.4s ease-in-out;
+}
+
+.container {
+    padding: 100px 20px;
+    margin-top: 100px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.container table{
+    border: 2px solid black;
+}
+table , td,tr{
+    border: 2px solid #000;
+    border-collapse: collapse;
+    padding: 5px 13px;
+}
+.btn{
+    background: none;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px 20px;
+    min-width: 50px;
+    transform: color 0.4s linear;
+    position: relative;
+}
+.btn:hover{
+    color: #fff;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+.btn1::before{
+    transform: scaleX(0);
+}
+.btn1:hover::before{
+    transform: scaleX(1);
+}
+h1,h2,h3{
+    margin: 23px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        display: block;
+        transform: translateY(0);
+    }
+
+    .burger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line2 {
+        opacity: 0;
+    }
+
+    .burger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}

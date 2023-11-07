@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Us</title>
+    <style>
+        /* Style for the "About Us" page */
+        .about-content {
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            /* Initially hidden */
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .about-content h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Animation when content fades in */
+        .about-content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <!-- Navigation menu here -->
+        <div class="logo">Password Manager</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="about-content">
+        <h1>About Us</h1>
+        <p>Welcome to our password manager! We are dedicated to keeping your passwords secure and easily accessible.</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
